@@ -1,0 +1,21 @@
+FINI — SITE CONCEITUAL
+
+Para abrir: execute Iniciar Site.cmd. O navegador abrirá o endereço local
+http://localhost:4173. Se a porta estiver ocupada, o iniciador escolherá outra.
+Requer Python instalado no computador.
+
+O site usa somente imagens da pasta Imagens. As fontes e o Three.js estão
+em vendor; depois de baixado, o site não depende de serviços externos.
+
+Recursos: carrossel com embalagens em WebGL, arraste e teclas direcionais,
+fundo por sabor, doces sem fundo branco na renderização, pacote que acompanha
+a rolagem, quatro etapas, cartões, montagem de trio e seleção local persistente.
+
+O fundo branco dos doces é removido durante a renderização por transparência
+conectada às bordas. Os arquivos originais não são alterados.
+
+O verso das embalagens é uma composição conceitual. Não reproduz um rótulo
+nutricional real. O site não possui checkout nem processa compras ou pagamentos.
+
+Arquivos principais: index.html, style.css, app.js.
+Layout adaptável para celular e suporte a preferência por movimento reduzido.

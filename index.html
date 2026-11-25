@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f498c1">
+  <meta name="description" content="Um mundo de cores, sabores e diversão. Explore seus favoritos Fini e monte um mix com a sua cara.">
+  <title>Fini — Abra um mundo de diversão</title>
+  <link rel="icon" type="image/png" href="Imagens/Fini_Logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a class="brand" href="#sabores" aria-label="Fini, início"><img src="Imagens/Fini_Logo.png" alt="Fini" width="102" height="55"></a>
+    <nav class="nav-links" aria-label="Navegação principal"><a href="#sabores" class="active">Sabores</a><a href="#universo">Universo Fini</a><a href="#favoritos">Favoritos</a><a href="#mix">Seu mix</a></nav>
+    <div class="nav-right"><span class="little-note">ABRA A DIVERSÃO.</span><button class="basket" id="basket" aria-label="Abrir sua seleção"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18l-2 12H5L3 8Zm5 0 4-6 4 6M9 12v4m6-4v4"/></svg><span id="badge" hidden>0</span></button><a class="pill dark" href="#mix">Monte seu mix</a></div>
+  </header>
+  <main>
+    <section id="sabores" class="hero" aria-label="Explore os sabores Fini" aria-roledescription="carrossel">
+      <div class="reveal" id="reveal"></div><div class="rings"></div>
+      <div class="bits" id="bits" aria-hidden="true"></div>
+      <div class="hero-kicker"><span></span> UM MUNDO DE POSSIBILIDADES</div>
+      <div class="arc" id="arc" aria-label="Arraste para explorar os sabores"><div id="fallback"></div></div>
+      <div class="flavor-controls"><button class="round prev" id="prev" aria-label="Sabor anterior">←</button><span>ENCONTRE SEU FAVORITO</span><button class="round next" id="next" aria-label="Próximo sabor">→</button></div>
+      <div class="hero-name"><p id="flavor-type">UM BEIJO DE DIVERSÃO</p><h1 id="title" aria-live="polite">BEIJOS</h1></div>
+      <div class="counter" id="count" aria-hidden="true">01</div>
+      <button class="autoplay" id="auto" aria-pressed="true"><span id="auto-icon">Ⅱ</span> <span id="auto-label">AUTOPLAY</span></button>
+      <div class="hero-bottom"><span>CORES. FORMAS. MUITA FINI.</span><a href="#universo">ROLE PARA DESCOBRIR <span>↓</span></a><span id="fraction">01 / 05</span></div>
+    </section>
+    <section class="inside" id="universo" aria-label="Conheça o universo Fini">
+      <div class="inside-pin"><div class="inside-rings"></div><div class="storm-dark" id="storm-dark"></div><div class="step-number" id="step-number">01</div><div id="inside-anchor"></div><div id="storm" aria-hidden="true"></div></div>
+    </section>
+    <div class="inside-front" id="inside-front"><div class="inside-copy"><span class="eyebrow">TEM UM MUNDO EM CADA PACOTE</span><h2 id="inside-title">PEQUENOS<br>DOCES.<br>GRANDES<br>SORRISOS.</h2></div><div class="step-nav" aria-label="Etapas do universo Fini"><button data-step="0" class="active" aria-label="Etapa 1: formas divertidas">♡</button><button data-step="1" aria-label="Etapa 2: escolha seu favorito">✳</button><button data-step="2" aria-label="Etapa 3: crie seu mix">✦</button><button data-step="3" aria-label="Etapa 4: sabor selecionado">☺</button></div><p class="inside-caption" id="inside-caption">Formas que surpreendem.<br>Diversão em cada escolha.</p><span class="inside-foot">O LADO MAIS DOCE DO SEU DIA.</span></div>
+    <section class="shop" id="favoritos">
+      <div class="shop-heading"><div><p class="eyebrow">DIFÍCIL É ESCOLHER UM SÓ</p><h2>SEUS NOVOS<br><span>FAVORITOS.</span></h2></div><p>Cinco jeitos de deixar o dia<br>mais divertido. Qual deles<br>tem a sua cara?</p></div>
+      <div class="cards" id="cards"></div><p class="shop-foot">UM PACOTE DE POSSIBILIDADES. <span>CLIQUE NO + PARA GUARDAR SEUS FAVORITOS.</span></p>
+    </section>
+    <section class="builder" id="mix">
+      <div class="builder-copy"><p class="eyebrow">A COMBINAÇÃO PERFEITA É A SUA</p><h2>SEU MIX.<br>SUAS REGRAS.<br><span>TRIPLA DIVERSÃO.</span></h2><p class="builder-description">Escolha 3 pacotes. Misture os clássicos,<br>repita seu favorito e deixe do seu jeito.</p><div class="choices" id="choices"></div><button id="add-mix" class="buy" disabled>Escolha mais 3 <span>MONTE SEU TRIO</span></button><p class="demo-note">Uma seleção para se inspirar. Não realizamos vendas neste site.</p></div>
+      <div class="mix-stage"><div class="mix-glow" id="mix-glow"></div><div class="mix-orbit"></div><span class="stage-label">FEITO DO SEU JEITO</span><div class="slots" id="slots"></div><span class="stage-bottom" id="pack-count">0 DE 3 ESCOLHIDOS</span></div>
+    </section>
+  </main>
+  <footer><a href="#sabores"><img src="Imagens/Fini_Logo.png" alt="Fini" width="98" height="53"></a><span>ABRA UM MUNDO DE DIVERSÃO.</span><p>Projeto conceitual independente.<br>Imagens e marcas pertencem aos respectivos titulares.</p><a href="#sabores" class="back-top">VOLTE AO TOPO ↑</a></footer>
+  <canvas id="world" aria-hidden="true"></canvas>
+  <dialog id="cart"><div class="cart-top"><span class="eyebrow">SUAS ESCOLHAS</span><button class="close" id="close-cart" aria-label="Fechar seleção">×</button></div><h2>SEU LADO<br>MAIS FINI.</h2><div id="cart-items"></div><div class="cart-bottom"><p>Seleção ilustrativa, sem compra ou pagamento.</p><button id="continue" class="pill dark">Continuar explorando</button></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="no-script">Ative o JavaScript para explorar o carrossel e montar seu mix.</p></noscript>
+</body>
+</html>
